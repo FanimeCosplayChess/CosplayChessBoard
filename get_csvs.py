@@ -1,9 +1,12 @@
 import csv
+import os
 
 def get_images():
     image_dict = {}
 
-    with open('./csvs/image_map.csv') as csvfile:
+    dirname = os.path.dirname(__file__)
+    filename = os.path.join(dirname, './csvs/image_map.csv')
+    with open(filename) as csvfile:
         readCSV = csv.reader(csvfile, delimiter=',')
         for row in readCSV:
             image_dict[row[0]] = row[1]
@@ -14,7 +17,9 @@ def get_moves():
 
     moves_list = []
 
-    with open('./csvs/moves.csv') as csvfile:
+    dirname = os.path.dirname(__file__)
+    filename = os.path.join(dirname, './csvs/moves.csv')
+    with open(filename) as csvfile:
         readCSV = csv.reader(csvfile, delimiter=',')
         for row in readCSV:
             moves_list.append((row[0],(int(row[1].strip()),int(row[2].strip()))))
