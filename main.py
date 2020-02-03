@@ -1,3 +1,5 @@
+import os
+
 import pygame
 from skimage.io import imread
 from skimage.transform import resize
@@ -5,6 +7,8 @@ import numpy as np
 
 from chess_pieces_defaults import pieces_dict
 from get_csvs import get_images, get_moves
+
+dirname = os.path.dirname(__file__)
 
 pygame.init()
 
@@ -36,7 +40,9 @@ surf_dict =  {}
 image_dict = get_images()
 
 for k in pieces_dict.keys():
-    surf_dict[k] = get_image('./images/'+image_dict[k].strip())
+
+    filename = os.path.join(dirname, './images/'+image_dict[k].strip())
+    surf_dict[k] = get_image(filename)
 
 piece_speed = 0
 
