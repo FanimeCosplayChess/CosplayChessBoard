@@ -1,8 +1,6 @@
 import os
 
 import pygame
-from skimage.io import imread
-from skimage.transform import resize
 import numpy as np
 
 from chess_pieces_defaults import pieces_dict
