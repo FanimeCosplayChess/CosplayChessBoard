@@ -60,7 +60,9 @@ def game_loop():
     x_change = 0
 
     gameExit = False
+    
 
+    # Handle Input
     while not gameExit:
 
         for event in pygame.event.get():
@@ -92,7 +94,9 @@ def game_loop():
                 game_state = "AWAIT"
 
         #######################################################################
+        
 
+        # Draw Chessboard
         gameDisplay.fill(white)
 
         for i in range(8):
@@ -100,7 +104,7 @@ def game_loop():
                 if (i+j) % 2 ==0:
                     pygame.draw.rect(gameDisplay,black,(50+i*50,50+j*50,50,50))
 
-
+        # Draw Pieces
         for piece_key, piece_obj in pieces_dict.items():
 
             gameDisplay.blit(surf_dict[piece_key],(
