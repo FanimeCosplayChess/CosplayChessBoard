@@ -1,6 +1,8 @@
 from chesspiece import ChessPiece
+
 x_off = 50
 y_off = 50
+
 pieces_dict = {
                 'w_rook_1':ChessPiece(
                                     init_x = 0+x_off,
@@ -226,3 +228,26 @@ pieces_dict = {
                                     piece_type = 'rook'
                                   )
                 }
+
+grid_dict = {
+            'x':{
+                 0:'a',
+                 1:'b',
+                 2:'c',
+                 3:'d',
+                 4:'e',
+                 5:'f',
+                 6:'g',
+                 7:'h',
+            },
+            'y':{
+                 0:'1',
+                 1:'2',
+                 2:'3',
+                 3:'4',
+                 4:'5',
+                 5:'6',
+                 6:'7',
+                 7:'8',
+            }
+    }
