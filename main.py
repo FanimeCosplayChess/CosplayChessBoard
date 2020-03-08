@@ -74,9 +74,8 @@ def main(args):
     p_x = 0
     p_y = 0
 
-
+    # Get Moves as a list of x,y postions and a chess piece
     moves = get_moves()
-
     def game_loop():
 
         NUM_STEPS = 50
